@@ -1,0 +1,77 @@
+########################################
+
+#Nesting dictionary in dictionary
+
+travel_log = [
+    {
+    'France':{'city_visted':['paris','tille','dijjo'],'total_vistis':12},
+    'Germany':{'city_visted':['fillo','minto','tinni'],'total_vistis':5},  
+}]
+print(travel_log)
+
+#nesting dictionary in a list
+#Here is a list containg two dictionaries which contain three types of data in each (string,number,list) 
+travel_log = [
+    {
+    'country':'France',
+    'city_visted':['paris','tille','dijjo'],
+    'total_vistis':12},
+    {'country':'Germany',
+     'city_visted':['fillo','minto','tinni'],
+     'total_vistis':5
+    }
+]
+
+
+
+
+
+
+
+#################################################For arranging them (1st method)
+
+
+travel_log = [
+    {
+    'country':'France',
+    'city_visted':['paris','tille','dijjo'],
+    'total_vistis':12},
+    {'country':'Germany',
+     'city_visted':['fillo','minto','tinni'],
+     'total_vistis':5
+    }
+]
+for lists in travel_log:
+    for entry in lists:
+        print(f"{entry}:\n{lists[entry]}")
+        
+
+
+
+
+#################################################For arranging them (2nd method)
+
+
+
+travel_log = [
+    {
+        'country': 'France',
+        'city_visited': ['paris', 'tille', 'dijjo'],
+        'total_visits': 12
+    },
+    {
+        'country': 'Germany',
+        'city_visited': ['fillo', 'minto', 'tinni'],
+        'total_visits': 5
+    }
+]
+
+for entry in travel_log:
+    country = entry['country']
+    cities = entry['city_visited']
+    cities_formatted = "\n".join(cities)  # Join cities with newline
+    total_visits = entry['total_visits']
+    
+    print(f"Country:\n{country}")
+    print(f"City Visited:\n{cities_formatted}")
+    print(f"Total Visits:\n{total_visits}\n")

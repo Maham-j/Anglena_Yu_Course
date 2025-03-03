@@ -1,0 +1,39 @@
+travel_log = [
+    {
+        'country': 'France',
+        'city_visited': ['paris', 'tille', 'dijjo'],
+        'total_visits': 12
+    },
+    {
+        'country': 'Germany',
+        'city_visited': ['fillo', 'minto', 'tinni'],
+        'total_visits': 5
+    }
+]
+
+def add_new_country(country,city_visited,total_visits):
+    new = {}
+    new['country'] = country
+    new['city_visited'] = city_visited
+    new['total_visits'] = total_visits
+    
+    travel_log.append(new)
+   
+    
+add_new_country('Russia',['Moscow','Saint Petersub'],2)
+add_new_country('Pakistan',['Okara','Lahore','Pindi'],15)
+# print(travel_log)
+
+
+for entry in travel_log:
+    
+    country = entry['country']
+    city_visited = entry['city_visited']
+    c = '\n'.join(city_visited)
+    total_visits = entry['total_visits']
+    
+    print('Country:',country)
+    print('City_visited:\n',c)
+    print('Total_visits:',total_visits)
+    print()
+        
