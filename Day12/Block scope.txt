@@ -1,0 +1,4 @@
+###################
+In python there is no block scope like c++ or java which means that the variable created inside if or while loop  is called local and is
+assesable only inside loops which is not in python.In python the variable inside loops is a global variable.
+ 

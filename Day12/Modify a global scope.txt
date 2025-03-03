@@ -1,0 +1,22 @@
+#####################
+A global scope can be modified and used inside function but it cause bugs to occur more 
+
+a = 1
+def main():
+	global a
+	print(a)   -----> will print 1
+main()
+
+
+
+
+
+
+#############
+instead of modying we should return it
+
+a = 1
+def main():
+	print(a)
+	return a + 1
+main()

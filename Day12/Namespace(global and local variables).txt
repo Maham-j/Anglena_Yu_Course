@@ -1,0 +1,25 @@
+##############################
+Local scope variable:
+which can be only used inside function
+
+
+enemies = 1
+def increase_enemies():
+	enemies = 2
+	print(enemies)   --------->will print 2 because inside function it is redefined as 2
+increase_enemies()
+print(enemies)   --------> will print 1 because it is outsidethe fucntion and is define at top .
+
+
+
+
+
+###########################
+Global scope variable:
+which can used both inside and otside the function only if not redefined inside function
+
+
+
+player_health = 10
+def drink_potion():
+position_strength

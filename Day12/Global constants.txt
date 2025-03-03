@@ -1,0 +1,9 @@
+#####################
+Global constants are values in a program that are assigned once and never change during the execution of the program. 
+They are typically used to represent fixed values that are relevant throughout the codebase.
+Using global constants can improve code readability, make it easier to understand the purpose of certain values,
+like value of pi and things you never wanted to be changed.it should all be capitalized
+
+PI = 3.14159
+URL =  "http://maham.com
+TWITTER_HANDLE = "@maham_jamil" 
