@@ -1,0 +1,129 @@
+import random
+from IPython.display import clear_output
+logo = '''
+ -------          -------
+|A      |        |J      |
+|       |        |       |
+|       |        |       |
+|       |        |       |
+|      A|        |      J|
+ -------          -------
+  _     _            _    _            _     
+ | |   | |          | |  (_)          | |    
+ | |__ | | __ _  ___| | ___  __ _  ___| | __ 
+ | '_ \| |/ _` |/ __| |/ / |/ _` |/ __| |/ / 
+ | |_) | | (_| | (__|   <| | (_| | (__|   <  
+ |_.__/|_|\__,_|\___|_|\_\ |\__,_|\___|_|\_\ 
+                        _/ |                 
+                       |__/                  
+
+'''
+
+print(logo)
+cards = [11,2,3,4,5,6,7,8,9,10,10,10,10]
+# Function to generate a user card
+def user_card_generator():
+    global user
+    user_card = random.sample(cards, 1)
+    user += user_card
+        
+# Function to calculate user's score
+def user_score_generator():
+    global user_score
+    user_score = sum(user)
+    return user_score
+
+# Function to generate a computer card
+def computer_card_generator():
+    global computer
+    computer_card = random.sample(cards, 1)
+    computer +=computer_card
+
+# Function to calculate computer's score
+def computer_score_generator():
+    global computer_score
+    computer_score = sum(computer)
+    return computer_score
+
+# Function to display game results
+def display_results():
+    print(f"Your cards: {user}, current score: {user_score}")
+    print(f"Computer's first card: {computer}")
+    print(f"Your final hand: {user},  final_score: {user_score}")
+    print(f"Computer final hand: {computer},  final_score: {computer_score}")
+
+# Main game loop
+def game():
+    global user, user_score, computer_score, computer
+    computer_bets = user_bets
+    while ask == 'y':
+        clear_output(wait=True)
+        print(logo)
+	ask = input("Do you want to play a game of Blackjack? type 'y' or 'n': ")
+    	user_bets = int(input('Place your bets: $'))
+        user = []
+        user_score = 0
+        computer_score = 0
+        computer = []  
+
+        user_card_generator()
+        user_card_generator()
+        user_score_generator()
+        print(f"Your cards: {user}, current score: {user_score}")
+
+        computer_card_generator()
+        print(f"Computer's first card: {computer}")
+
+        ask2 = input("Type 'y' to get another card, type 'n' to pass: ")
+        while ask2 == 'y':
+            user_card_generator()
+            user_score_generator()
+            display_results() 
+
+            if user_score > 21:
+                print('You busted!You loose.😶')
+                break
+
+
+            ask2 = input("Type 'y' to get another card, type 'n' to pass: ")
+
+        while computer_score <17:
+            computer_card_generator()
+            computer_score_generator()
+        display_results()
+        
+        if (user_score == 21 or computer_score ==21) and len(cards) == 2:
+            return 0
+        if 11 in user  and user_score > 21 :
+            user.remove(11)
+            user.append(1)
+        if computer_score > 21 and  11 in computer:
+            computer.remove(11)
+            computer.append(1)
+            
+        if user_score > 21  :
+            print("You busted! You lose.😑 $0")
+            
+        elif computer_score > 21:
+            print(f"Computer busted! You win.😁 ${user_bets + computer_bets}")
+    
+        elif computer_score == 21:
+            print('Computer won with Blackjack😮 $0')
+            
+        elif user_score == 21:
+            print(f'User won with Blackjack😎 ${user_bets + computer_bets}')
+            
+        elif user_score > computer_score:
+            print(f"You win!🤩 ${user_bets + computer_bets}")
+            
+        elif user_score < computer_score:
+            print("You lose!🙄 $0")
+            
+        elif user_score == computer_score:
+            print(f"It's a draw!🤪 ${user_bets}")
+            
+
+        ask = input("Want to play again? type 'y' or 'n': ")
+        if ask == "n":
+            print('Thanks for Playing!🥰')
+game()
