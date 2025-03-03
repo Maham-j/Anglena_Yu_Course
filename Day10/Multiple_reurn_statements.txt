@@ -1,0 +1,8 @@
+def format_name(f_name,l_name):
+    if f_name == '' or l_name == '':
+        return 'You did not provide valid inputs'
+    result = f_name +' '+ l_name
+    return f'Result: {result.capitalize()}'
+
+formatted_string = format_name(f_name = input(),l_name = input()  )
+print(formatted_string)

@@ -1,0 +1,9 @@
+def format_name():
+    
+    f_name = input()
+    l_name = input()   
+    result = f_name +' '+ l_name
+    return result.capitalize()
+
+formatted_string = format_name()
+print(formatted_string)

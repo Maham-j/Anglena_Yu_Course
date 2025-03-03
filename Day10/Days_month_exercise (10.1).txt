@@ -1,0 +1,60 @@
+#############################################(ME)
+def is_leap_year():
+    if year%4 ==0 and (year%100 !=0 or year%400 ==0):
+        return True
+    else:
+        return False
+year = int(input('Enter year: '))
+result = is_leap_year()
+print(result)
+
+def days_in_month(Year,Month):
+    if month <1 or month >12:
+        return 'Invalid month'
+    month_days = [31,28,31,30,31,30,31,31,30,31,30,31]
+    for days in month_days:
+        if month == 2:
+            if result == True:
+                month_days[2] = month_days[2-1]
+                return (month_days[2]+1)
+            return (month_days[2-1])
+        else:
+            return month_days[month-1]
+                    
+#year = int(input('Enter a year: '))
+#month = int(input('Enter a month: '))
+#days = days_in_month(year,month) i commented this because it will double ask for year
+
+
+
+
+
+
+
+
+
+
+##############################################(ANGELA)
+def is_leap_year():
+    if year%4 ==0 and (year%100 !=0 or year%400 ==0):
+        return True
+    else:
+        return False
+#year = int(input('Enter a year: '))
+#month = int(input('Enter a month: '))
+#days = days_in_month(year,month)
+
+def days_in_month(Year,Month):
+    if month <1 or month >12:
+        return 'Invalid month'
+    month_days = [31,28,31,30,31,30,31,31,30,31,30,31]
+    for days in month_days:
+        if month == 2 and result == True:
+            return 29
+        else:
+            return month_days[month-1]
+                    
+year = int(input('Enter a year: '))
+month = int(input('Enter a month: '))
+days = days_in_month(year,month)
+print(days)

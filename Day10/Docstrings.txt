@@ -1,0 +1,7 @@
+for multi-line comments and enclosed by triple quot-marks
+
+
+"""Here is a doc-string
+you can write as manylines as you want 
+to comment
+"""

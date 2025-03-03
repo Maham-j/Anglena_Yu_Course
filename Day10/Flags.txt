@@ -1,0 +1,14 @@
+#These are to control the loops
+
+should_continue = True
+while should_continue:
+
+
+
+
+end_game = False
+while end_game =True:
+
+
+
+
